@@ -1,0 +1,31 @@
+FORMAT: 1A
+
+# Requests API
+
+Демонстрация различных способов задания запросов.
+
+Запросы задаются с помощью секции
+[Request](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-request-section)
+и имеют внутреннюю структуру, идентичную секции
+[Response](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-response-section).
+
+## POST /message
+
++ Request (text/plain)
+
+    Простой текстовый запрос с заголовками
+
+    + Headers
+
+            X-My-Message-Header: 42
+
+    + Body
+
+            Hello World!
+
++ Request (application/json)
+    Запрос с MSON-структурой данных
+    + Attributes (object)
+        + foo: `bar` (string, required)
+
++ Response 200

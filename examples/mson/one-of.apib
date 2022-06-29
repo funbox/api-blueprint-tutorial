@@ -1,0 +1,92 @@
+FORMAT: 1A
+
+# Array API
+
+Демонстрация использования `One Of`
+
+# Data Structures
+
+## Point (array[number], min-length="2", max-length="2")
+
+## Zone
+
+Пример правильного использования `One Of`
+
++ id (number, required)
+
++ One Of
+    + Properties
+        + type: polygon (string, required, fixed)
+        + points (array[Point], required)
+    + Properties
+        + type: circle (string, required, fixed)
+        + center (Point, required)
+        + radius (number, required)
+
+## User
+
+Неправильный пример использования `One Of`
+
+В данном примере предполагается, что пользователь может быть обычным пользователем, у которого есть
+только набор групп, или админом, у которого дополнительно есть набор разрешений. Проблема данного
+описания в том, что если у пользователя есть оба поля (groups и permissions), то такой пользователь
+подойдет под оба варианта из `One Of`, а в этом случае валидатор будет считать данные некорректными,
+потому что в случае использования `One Of` данные должны подходить только под один из вариантов.
+
+В данном случае есть два способа решения проблемы: либо отказаться от использования `One Of` и
+сделать поле `permissions` опциональным, либо ввести дополнительное поле `type` с фиксированным
+значением, как в примере выше.
+
++ name (string, required)
+
++ One Of
+    + Properties
+        + groups (array[string], required)
+    + Properties
+        + groups (array[string], required)
+        + permissions (array[string], required)
+
+# IncorrectComment
+
+Пример использования `One Of` вместе с атрибутом `fixed-type`
+
+При использовании атрибута `fixed-type` структура объекта фиксируется: все возможные поля
+перечисляются в `required` и задается атрибут `"additionalProperties": false`. Если в одной из
+секций `One Of` объявлено свойство, которого нет среди свойств объекта, то такое свойство будет
+считаться некорректным. В данном примере среди свойств объекта есть только `name`, при этом в
+секциях `One Of` могут прийти поля `type` и `id`. Таким образом, если придет только поле `name`,
+валидация не пройдет из-за `One Of`, а если придут поля `name` и `type`, то не пройдет 
+проверка на `"additionalProperties": false`, так как поле `type` не описано среди доступных свойств объекта.
+
++ id (number, required)
++ text (string, required)
++ author (object, fixed-type)
+    + name (string, required)
+
+    + One Of
+        + Properties
+            + type: guest (string, required, fixed)
+        + Properties
+            + type: registered (string, required, fixed)
+            + id (number, required)
+
+# CorrectComment
+
+Чтобы решить описанную выше проблему, нужно либо отказаться от использования `fixed-type`,
+либо отказаться от использования `One Of`, либо перечислить свойства из `One Of` в списке свойств
+объекта.
+
++ id (number, required)
++ text (string, required)
++ author (object, fixed-type)
+    + name (string, required)
+
+    + type (string)
+    + id (optional)
+
+    + One Of
+        + Properties
+            + type: guest (string, required, fixed)
+        + Properties
+            + type: registered (string, required, fixed)
+            + id (number, required)

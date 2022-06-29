@@ -1,0 +1,34 @@
+FORMAT: 1A
+
+# Resource and Actions API
+
+Демонстрация возможности объявления несколько секций [Action](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-action-section) внутри именованной секции [Resource](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-resource-section).
+
+# Сообщение дня [/message]
+
+Для секции `Resource` можно задать название. Хорошо подобранное название поможет читателю более
+точно понять назначение того или иного ресурса.
+
+## Обновить сообщение дня [PUT]
+
+Для секции `Action` тоже можно задать название.
+
++ Request (application/json)
+
+    + Body
+
+          {
+            "text": "Test message"
+          }
+
++ Response 200
+
+## GET
+
+Если назначение `Action` понятно, то название задавать необязательно.
+
++ Response 200 (text/plain)
+
+    + Body
+
+          Hello world!

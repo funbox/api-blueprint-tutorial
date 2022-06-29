@@ -1,0 +1,30 @@
+FORMAT: 1A
+
+# Responses API
+
+Демонстрация различных способов задания ответов.
+
+Каждый ресурс должен содержать хотя бы один ответ. Ответы задаются с помощью секции
+[Response](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-response-section).
+
+## GET /message
+
++ Response 200 (text/plain)
+
+    Простой текстовый ответ с заголовками
+
+    + Headers
+
+            X-My-Message-Header: 42
+
+    + Body
+
+            Hello World!
+
++ Response 200 (application/json)
+    Ответ с MSON-структурой данных
+    + Attributes (object)
+        + foo: `bar` (string, required)
+
++ Response 403
+    Ответ без тела

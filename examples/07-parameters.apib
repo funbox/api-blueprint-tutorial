@@ -1,0 +1,33 @@
+FORMAT: 1A
+
+# Parameters API
+
+Демонстрация различных способов задания URI-параметров.
+
+Параметры задаются в URI и описываются в секции
+[Parameters](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-uriparameters-section).
+
+*Важно помнить, что при описании параметров используется синтаксис, похожий на MSON, но не являющийся
+им: при описании параметров нельзя использовать объекты, именованные типы, а также массивы
+не-примитивных типов.*
+
+## GET /messages/{id}
+
+В данном ресурсе описывается параметр `id` как
+[URI Template variable](http://tools.ietf.org/html/rfc6570). Название параметра в URI указывается в
+фигурных скобках. Пример описываемого URI: `/messages/10`.
+
++ Parameters
+  + id: 1 (number) - уникальный идентификатор сообщения
+
++ Response 200
+
+## GET /messages{?search}
+
+В данном ресурсе описывается query-параметр `search`. Пример описываемого URI:
+`/messages?search=hello`.
+
++ Parameters
+  + search: hello (string) - отображать только сообщения, которые содержат искомую строку
+
++ Response 200

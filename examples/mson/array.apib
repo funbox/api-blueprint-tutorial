@@ -1,0 +1,40 @@
+FORMAT: 1A
+
+# Array API
+
+Демонстрация объявления массивов в `MSON`
+
+# Data Structures
+
+## Post1
+
+Объявление массива как поля объекта.
+
++ text (string, required) - текст поста
++ comments (array[string]) - список коментариев
+
+## Post2
+
+Объявление массива объектов как поля объекта
+
++ text (string, required) - текст поста
++ comments (array) - список коментариев
+    + (object)
+        + id (number, required)
+        + text (string, required)
+
+## Post3
+
+Объявление массива с элементами именованного типа как поля объекта
+
++ text (string, required) - текст поста
++ comments (array[Comment]) - список коментариев
+
+## Comment
+
++ id (number, required)
++ text (string, required)
+
+## Comments (array[Comment])
+
+Объявление массива как базового типа для именованного типа

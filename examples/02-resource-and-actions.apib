@@ -1,0 +1,38 @@
+FORMAT: 1A
+
+# Resource and Actions API
+
+Демонстрация возможности объявления нескольких секций [Action](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-action-section) внутри секции [Resource](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-resource-section).
+
+# /message
+
+Секция `Resource` определяется некоторым URL и может содержать одну или более секций типа `Action`.
+URL должен начинаться с символа `/`.
+
+## GET
+
+Вложенная в `Resource` секция `Action` определяется с помощью HTTP-метода и должна содержать хотя бы
+одну секцию `Response`, определяющую формат возвращаемых данных от сервера. Каждый ответ обязательно
+имеет HTTP-код и опционально содержит тип данных.
+
++ Response 200 (text/plain)
+
+    + Body
+
+          Hello world!
+
+## PUT
+
+Еще одна секция `Action`, которая определяет запрос вида `PUT /message`. Кроме секции `Response`
+секция `Action` может содержать одну или несколько секций `Request`, определяющих формат передачи
+данных на сервер.
+
++ Request (application/json)
+
+    + Body
+
+          {
+            "text": "Test message"
+          }
+
++ Response 200

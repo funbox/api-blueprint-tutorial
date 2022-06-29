@@ -1,0 +1,50 @@
+FORMAT: 1A
+
+# Resource Prototypes API
+
+Демонстрация создания API с не-HTTP-взаимодействием. Для описания не-HTTP-взаимодействий
+используются секции
+[Group](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-resourcegroup-section),
+[SubGroup](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-subgroup-section)
+и
+[Message](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-message-section).
+
+# Data Structures
+
+## ChatMessage
++ id: 1 (number, required)
++ author
+  + id: 42 (number, required)
+  + name: `John Smith` (string, required)
++ text: `Hello world` (string, required)
+
+# Group /chat_messages
+
+С помощью секции `Group` можно создать группу сущностей аналогично группе ресурсов.
+
+## SubGroup chat:id
+
+Сообщения чата с идентификатором id
+
+В некоторых случаях одноуровневых групп бывает недостаточно. С помощью секции `SubGroup`
+можно создать подгруппу с сущностями. Если в описании API не требуется двухуровневой группировки сущностей,
+то можно не использовать секции `SubGroup` и добавлять секции `Message` напрямую в `Group`.
+
+### Message ServerToClientMessage
+Сообщения чата приходят с сервера на клиент сразу после создания.
+
+С помощью секции `Message` можно описать некоторую сущность с данными в формате `JSON` (с помощью
+языка `MSON`). То, как нужно интерпретировать ту или иную сущность, зависит от контекста. Например,
+в данном API секция `Message` описывает сообщение, которое может прийти от WebSocket-сервера на
+клиент или от WebSocket-клиента на сервер.
+
++ Attributes (ChatMessage)
+
+### Message ServerToClientMessage NewParticipant
+Оповещение о добавлении нового участника в канал.
++ Attributes
+    + name: `John` (string, required) - имя участника
+
+### Message ClientToServerMessage
++ Attributes
+    + text: `Hello world` (string, required) - текст сообщения

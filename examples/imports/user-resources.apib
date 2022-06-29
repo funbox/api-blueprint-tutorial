@@ -1,0 +1,43 @@
+# Group ресурсы пользователя
+
+В некоторых случаях может потребоваться группировка нескольких ресурсов для улучшения читаемости
+документации. Для реализации этой возможности в API Blueprint имеется секция
+[Group](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-resourcegroup-section).
+
+## Комментарии [/comments]
+
+### GET
+
++ Response 200 (application/json)
+    + Attributes (array, required)
+
+### POST
+
++ Request (application/json)
+
+    + Body
+
+          {
+            "text": "My comment"
+          }
+
++ Response 204
+
+## Заметки [/notes]
+
+### GET
+
++ Response 200 (application/json)
+    + Attributes (array, required)
+
+### POST
+
++ Request (application/json)
+
+    + Body
+
+          {
+            "text": "Test note"
+          }
+
++ Response 204

@@ -1,0 +1,61 @@
+FORMAT: 1A
+
+# Resource Prototypes API
+
+Демонстрация создания переиспользуемых ответов с помощью секции
+[Resource Prototypes](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-resource-prototypes)
+и последующего использования этих структур при описании ответов.
+
+# Resource Prototypes
+
+## UserResource
+
++ Response 403 (application/json)
+    + Attributes
+        + status: `permission denied` (string, required, fixed)
+
++ Response 404 (application/json)
+    + Attributes
+        + status: `not found` (string, required, fixed)
+
+# Group Ресурсы пользователя (UserResource)
+
+Каждый ресурс в данной группе содержит два ответа, объявленных в `UserResource`.
+
+## Комментарии [/comments]
+
+### GET
+
++ Response 200 (application/json)
+    + Attributes (array, required)
+
+### POST
+
++ Request (application/json)
+
+    + Body
+
+          {
+            "text": "My comment"
+          }
+
++ Response 204
+
+## Заметки [/notes]
+
+### GET
+
++ Response 200 (application/json)
+    + Attributes (array, required)
+
+### POST
+
++ Request (application/json)
+
+    + Body
+
+          {
+            "text": "Test note"
+          }
+
++ Response 204

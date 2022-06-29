@@ -1,0 +1,46 @@
+FORMAT: 1A
+
+# Schema Structures API
+
+Демонстрация создания переиспользуемых структур данных с помощью секции
+[Schema Structures](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-schema-structures)
+и последующего использования этих структур при описании ответов.
+
+# Schema Structures
+
+# MSISDN
+
+В MSON не хватает некоторых возможностей, которые доступны в JSON Schema, поэтому иногда проще
+описать некоторую часть структур данных напрямую в JSON Schema. Для этого нужно создать именованный
+тип в секции `Schema Structures` по аналогии с именованными типами в `Data Structures`. При описании
+именованного типа в секции `Body` нужно задать JSON Schema и пример с данными, который будет
+использоваться при построении примеров в запросах и ответах. Обе секции являются обязательными.
+
+Именованные Schema-типы не могут наследоваться от других типов, а также не могут являться родителем
+при наследовании. Данные типы можно использовать как поля объекта и элементы массива.
+
++ Schema
+
+            {
+              "type": "number",
+              "minimum": 79000000000,
+              "maximum": 79999999999,
+              "multipleOf": 1.0
+            }
++ Body
+
+            79000000123
+
+# Data Structures
+
+# User
+
+Внутри именованного типа `User` используется Schema-тип `MSISDN` как тип поля объекта.
+
++ name: `John` (string, required) - имя пользователя
++ msisdn (MSISDN, required) - телефон пользователя
+
+## GET /users
+
++ Response 200 (application/json)
+    + Attributes (array[User])
