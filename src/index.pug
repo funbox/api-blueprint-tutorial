@@ -1,0 +1,25 @@
+- const examples = locals.examples;
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content="initial-scale=1, width=device-width")
+    link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon.png" )
+    link(rel="shortcut icon", href="/favicon.ico")
+    link(rel="icon", type="image/png", href="/favicon-32x32.png", sizes="32x32")
+    link(rel="icon", type="image/png", href="/favicon-16x16.png", sizes="16x16")
+    link(rel="mask-icon", href="/safari-pinned-tab.svg", color="#5bbad5")
+    link(rel="stylesheet" href="/app.css")
+    title APIB Tutorial
+  body
+    h1 Примеры использования API Blueprint
+    ul.list
+      for example in examples
+        li.list__item
+          p.example
+            a.link.example__render(href=`${example.to}`)= example.name
+            |
+            | (
+            a.link.example__source(href=`${example.source}` target='_blank') Исходный файл
+            | )

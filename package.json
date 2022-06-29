@@ -2,6 +2,10 @@
   "name": "apib-examples",
   "version": "1.0.0",
   "description": "Examples of common sections of an API Blueprint documentation.",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "lint": "eslint --cache -c .eslintrc --ext .js ./"
+  },
   "devDependencies": {
     "@funboxteam/blueprinter": "5.1.0",
     "@funboxteam/eslint-config": "7.2.0",

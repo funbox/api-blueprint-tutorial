@@ -1,0 +1,41 @@
+html {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 62.5%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(63, 203, 255, .1);
+}
+
+body {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 16px 32px;
+  font-family: BlinkMacSystemFont, -apple-system, Ubuntu, Cantarell, Open Sans, Helvetica Neue, Roboto Rouble, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  background: #fff;
+  color: #333;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.link {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(35, 31, 32, .50);
+  color: rgb(35, 31, 32); /* #231f20 */
+}
+
+.link:hover {
+  border-color: rgba(35, 31, 32, .25);
+  color: rgba(35, 31, 32, .5);
+}
+
+.example .example__source {
+  opacity: 0.7;
+}
