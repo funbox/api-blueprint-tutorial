@@ -1,5 +1,11 @@
 {
   "name": "apib-examples",
   "version": "1.0.0",
-  "description": "Examples of common sections of an API Blueprint documentation."
+  "description": "Examples of common sections of an API Blueprint documentation.",
+  "devDependencies": {
+    "@funboxteam/blueprinter": "5.1.0",
+    "@funboxteam/eslint-config": "7.2.0",
+    "eslint": "7.32.0",
+    "pug": "2.0.4"
+  }
 }
