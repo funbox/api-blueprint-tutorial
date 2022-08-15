@@ -2,14 +2,14 @@ const path = require('path');
 const { readdirSync } = require('fs');
 
 const exclude = [
-  'imports', // подключаемые файлы
-  'mson', // содержат только Data Structures, рендер будет пустой
+  'imports', // imported files
+  'mson', // consist only of Data Structures, rendered page will be empty
 ];
 
 /**
- * Получаем список apib-файлов, находящихся в директории examples и её поддиректориях
- * @param {string} entryDir - текущая директория, в которой ищем файлы
- * @param {string=} rootDir - исходная директория (examples)
+ * Get a list of APIB files in `examples` directory and subdirectories
+ * @param {string} entryDir - current directory where we're looking for files
+ * @param {string=} rootDir - source directory (/examples)
  * @return {Array<string>}
  */
 function getExamplesFromDir(entryDir, rootDir) {

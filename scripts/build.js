@@ -51,7 +51,7 @@ function runCommand(cmd) {
     });
     res.on('exit', (code, signal) => {
       if (signal || code !== 0) {
-        console.error(`${ANSI_RED}[ERROR] Команда ${cmd} завершена с ошибкой${ANSI_ALL_OFF}`);
+        console.error(`${ANSI_RED}[ERROR] Command ${cmd} failed with an error${ANSI_ALL_OFF}`);
         reject();
       } else {
         resolve();
