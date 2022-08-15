@@ -13,7 +13,7 @@ html(lang='ru')
     link(rel="stylesheet" href="/app.css")
     title APIB Tutorial
   body
-    h1 Примеры использования API Blueprint
+    h1 Examples of API Blueprint sections
     ul.list
       for example in examples
         li.list__item
@@ -21,5 +21,5 @@ html(lang='ru')
             a.link.example__render(href=`${example.to}`)= example.name
             |
             | (
-            a.link.example__source(href=`${example.source}` target='_blank') Исходный файл
+            a.link.example__source(href=`${example.source}` target='_blank') Source file
             | )

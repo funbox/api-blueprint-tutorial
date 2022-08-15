@@ -2,22 +2,21 @@ FORMAT: 1A
 
 # Schema Structures API
 
-Демонстрация создания переиспользуемых структур данных с помощью секции
-[Schema Structures](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-schema-structures)
-и последующего использования этих структур при описании ответов.
+Example of how to define a set of reusable data structures using [Schema Structures](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-schema-structures)
+sections and use them in documentation.
 
 # Schema Structures
 
 # MSISDN
 
-В MSON не хватает некоторых возможностей, которые доступны в JSON Schema, поэтому иногда проще
-описать некоторую часть структур данных напрямую в JSON Schema. Для этого нужно создать именованный
-тип в секции `Schema Structures` по аналогии с именованными типами в `Data Structures`. При описании
-именованного типа в секции `Body` нужно задать JSON Schema и пример с данными, который будет
-использоваться при построении примеров в запросах и ответах. Обе секции являются обязательными.
+MSON lacks some of the features that are available in JSON Schema, so sometimes it's easier to describe some of the data structures directly in JSON Schema.
+To do that, create a named type in the `Schema Structures` section as you do with named types in a `Data Structures` section.
 
-Именованные Schema-типы не могут наследоваться от других типов, а также не могут являться родителем
-при наследовании. Данные типы можно использовать как поля объекта и элементы массива.
+When you define a named type, you need to specify JSON Schema in the `Schema` section and an example with data in `Body` section.
+Data in `Body` section will be used to generate examples in requests and responses. Both sections are required.
+
+Named Schema types cannot inherit from other Schema types and cannot be used as a parent structure to other Schema types.
+These types may be used as object fields or array elements.
 
 + Schema
 
@@ -35,10 +34,10 @@ FORMAT: 1A
 
 # User
 
-Внутри именованного типа `User` используется Schema-тип `MSISDN` как тип поля объекта.
+Schema type `MSISDN` is used as a field type of the User named type.
 
-+ name: `John` (string, required) - имя пользователя
-+ msisdn (MSISDN, required) - телефон пользователя
++ name: `John` (string, required) - user name
++ msisdn (MSISDN, required) - user phone
 
 ## GET /users
 

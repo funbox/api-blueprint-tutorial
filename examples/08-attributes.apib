@@ -2,12 +2,10 @@ FORMAT: 1A
 
 # Attributes API
 
-Демонстрация задания структуры ответа с помощью секции
-[Attributes](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-attributes-section).
+Example of defining response structure with the [Attributes](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-attributes-section) section.
 
-При описании запросов и ответов можно использовать не только статические данные
-секции `Body`, но и описать структуру данных с помощью языка
-[MSON](https://github.com/funbox/mson) в секции `Attributes`.
+You can use a static `Body` section in requests and responses or you can define a data structure in `Attributes` section
+using [MSON](https://github.com/funbox/mson) language.
 
 ## GET /messages
 
@@ -15,8 +13,8 @@ FORMAT: 1A
     + Attributes (array)
         + (object)
             + type (enum, required)
-                + incoming - входящее сообщение
-                + outcoming - исходящее сообщение
-            + `author_id` (number, required) - идентификатор автора сообщения
-            + text: `Hello world` (string, required) - текст сообщения
-            + tags (array[string], optional) - теги сообщения
+                + incoming - incoming message
+                + outgoing - outgoing message
+            + `author_id` (number, required) - identifier of the author
+            + text: `Hello world` (string, required) - message text
+            + tags (array[string], optional) - message tags

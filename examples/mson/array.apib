@@ -2,33 +2,33 @@ FORMAT: 1A
 
 # Array API
 
-Демонстрация объявления массивов в `MSON`
+Example of array definition in `MSON`.
 
 # Data Structures
 
 ## Post1
 
-Объявление массива как поля объекта.
+Array as an object field.
 
-+ text (string, required) - текст поста
-+ comments (array[string]) - список коментариев
++ text (string, required) - post text
++ comments (array[string]) - comments list
 
 ## Post2
 
-Объявление массива объектов как поля объекта
+Array of objects as an object field.
 
-+ text (string, required) - текст поста
-+ comments (array) - список коментариев
++ text (string, required) - post text
++ comments (array) - comments list
     + (object)
         + id (number, required)
         + text (string, required)
 
 ## Post3
 
-Объявление массива с элементами именованного типа как поля объекта
+Array with elements of a named type.
 
-+ text (string, required) - текст поста
-+ comments (array[Comment]) - список коментариев
++ text (string, required) - post text
++ comments (array[Comment]) - comments list
 
 ## Comment
 
@@ -37,4 +37,4 @@ FORMAT: 1A
 
 ## Comments (array[Comment])
 
-Объявление массива как базового типа для именованного типа
+Array as a base type for a named type.

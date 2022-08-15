@@ -2,22 +2,22 @@ FORMAT: 1A
 
 # Array API
 
-Демонстрация объявления enum в `MSON`
+Example of enums in `MSON`.
 
 # Data Structures
 
 ## User
 
-Объявление enum как поля объекта
+Enum as an object field.
 
 + name (string, required)
 + status (enum[string])
-    + active - активный
-    + inactive - неактивный
+    + active - active user
+    + inactive - inactive user
 
 ## UserStatus (enum[string])
 
-Объявление enum как именованный тип
+Enum as a base for a named type.
 
-+ active - активный
-+ inactive - неактивный
++ active - active user
++ inactive - inactive user

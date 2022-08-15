@@ -2,32 +2,31 @@ FORMAT: 1A
 
 # Parameters API
 
-Демонстрация различных способов задания URI-параметров.
+Example of multiple ways to define a URI parameter.
 
-Параметры задаются в URI и описываются в секции
-[Parameters](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-uriparameters-section).
+You need to specify parameters in a URI and describe them in a [Parameters](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-uriparameters-section) section.
 
-*Важно помнить, что при описании параметров используется синтаксис, похожий на MSON, но не являющийся
-им: при описании параметров нельзя использовать объекты, именованные типы, а также массивы
-не-примитивных типов.*
+:::warning
+Please be warned that syntax to describe parameters may resemble MSON, but it has differences:
+you are not allowed to use objects, named types, and arrays of non-primitive elements to describe parameters.
+:::
 
 ## GET /messages/{id}
 
-В данном ресурсе описывается параметр `id` как
-[URI Template variable](http://tools.ietf.org/html/rfc6570). Название параметра в URI указывается в
-фигурных скобках. Пример описываемого URI: `/messages/10`.
+Given resource specifies parameter `id` as [URI Template variable](http://tools.ietf.org/html/rfc6570).
+The name of the parameter is defined in curly braces. Example of the URI: `/messages/10`.
 
 + Parameters
-  + id: 1 (number) - уникальный идентификатор сообщения
+  + id: 1 (number) - unique message identifier
 
 + Response 200
 
 ## GET /messages{?search}
 
-В данном ресурсе описывается query-параметр `search`. Пример описываемого URI:
-`/messages?search=hello`.
+Given resource specifies query parameter `search`.
+Example of the URI: `/messages?search=hello`
 
 + Parameters
-  + search: hello (string) - отображать только сообщения, которые содержат искомую строку
+  + search: hello (string) - show only messages that contain the search string
 
 + Response 200

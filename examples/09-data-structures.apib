@@ -2,28 +2,27 @@ FORMAT: 1A
 
 # Data Structures API
 
-Демонстрация создания переиспользуемых структур данных с помощью секции
-[Data Structures](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-data-structures)
-и последующего использования этих структур при описании ответов.
+Example of how to define reusable data structures using [Data Structures](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-data-structures) section
+and how to use them in responses.
 
 # Data Structures
 
 # MessageType(enum)
 
-+ incoming - входящее сообщение
-+ outcoming - исходящее сообщение
++ incoming - incoming message
++ outgoing - outgoing message
 
 # Tag
 
-+ id: 42 (number, required) - идентификатор тега
-+ title: `some tag` (string, required) - текст тега
++ id: 42 (number, required) - tag identifier
++ title: `some tag` (string, required) - tag text
 
 # Message
 
 + type (MessageType, required)
-+ `author_id` (number, required) - идентификатор автора сообщения
-+ text: `Hello world` (string, required) - текст сообщения
-+ tags (array[Tag], optional) - теги сообщения
++ `author_id` (number, required) - identifier of the message author
++ text: `Hello world` (string, required) - message text
++ tags (array[Tag], optional) - message tags
 
 ## GET /messages
 

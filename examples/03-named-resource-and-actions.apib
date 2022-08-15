@@ -2,16 +2,15 @@ FORMAT: 1A
 
 # Resource and Actions API
 
-Демонстрация возможности объявления несколько секций [Action](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-action-section) внутри именованной секции [Resource](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-resource-section).
+Example of declaring multiple [Action](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-action-section) sections inside of a named [Resource](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-resource-section) section.
 
-# Сообщение дня [/message]
+# Message of the day [/message]
 
-Для секции `Resource` можно задать название. Хорошо подобранное название поможет читателю более
-точно понять назначение того или иного ресурса.
+A `Resource` section may have a name (identifier). A well-chosen name will help the reader better understand the purpose of a particular resource.
 
-## Обновить сообщение дня [PUT]
+## Update message of the day [PUT]
 
-Для секции `Action` тоже можно задать название.
+You can give a name to an `Action` section too.
 
 + Request (application/json)
 
@@ -25,7 +24,7 @@ FORMAT: 1A
 
 ## GET
 
-Если назначение `Action` понятно, то название задавать необязательно.
+If the purpose of an `Action` is clear, you can omit the name.
 
 + Response 200 (text/plain)
 

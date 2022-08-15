@@ -2,9 +2,7 @@ FORMAT: 1A
 
 # Resource Prototypes API
 
-Демонстрация создания переиспользуемых ответов с помощью секции
-[Resource Prototypes](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-resource-prototypes)
-и последующего использования этих структур при описании ответов.
+Example of how to define a set of reusable responses with the [Resource Prototypes](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-resource-prototypes) section and use them in documentation.
 
 # Resource Prototypes
 
@@ -18,11 +16,11 @@ FORMAT: 1A
     + Attributes
         + status: `not found` (string, required, fixed)
 
-# Group Ресурсы пользователя (UserResource)
+# Group User resources (UserResource)
 
-Каждый ресурс в данной группе содержит два ответа, объявленных в `UserResource`.
+Each resource in the group includes two responses that are defined in the `UserResource` prototype.
 
-## Комментарии [/comments]
+## Comments [/comments]
 
 ### GET
 
@@ -41,7 +39,7 @@ FORMAT: 1A
 
 + Response 204
 
-## Заметки [/notes]
+## Notes [/notes]
 
 ### GET
 

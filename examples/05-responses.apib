@@ -2,16 +2,16 @@ FORMAT: 1A
 
 # Responses API
 
-Демонстрация различных способов задания ответов.
+Example of multiple ways to define a response.
 
-Каждый ресурс должен содержать хотя бы один ответ. Ответы задаются с помощью секции
-[Response](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-response-section).
+Every resource should include at least one response.
+You can define a response with the [Response](https://github.com/funbox/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-response-section) section.
 
 ## GET /message
 
 + Response 200 (text/plain)
 
-    Простой текстовый ответ с заголовками
+    Plain text response with headers
 
     + Headers
 
@@ -22,9 +22,9 @@ FORMAT: 1A
             Hello World!
 
 + Response 200 (application/json)
-    Ответ с MSON-структурой данных
+    Response with MSON data structure
     + Attributes (object)
         + foo: `bar` (string, required)
 
 + Response 403
-    Ответ без тела
+    Response without a body
