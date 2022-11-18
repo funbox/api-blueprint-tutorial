@@ -1,8 +1,9 @@
 const pug = require('pug');
 const path = require('path');
 
+const BASE_PATH = process.env.BASE_PATH || '';
 const PATH_PREFIX = 'https://github.com/funbox/api-blueprint-tutorial/tree/master/examples';
-const EXAMPLE_PREFIX = process.env.BASE_PATH || '';
+const EXAMPLE_PREFIX = BASE_PATH;
 
 const baseDir = path.resolve(__dirname, '../');
 const indexFile = path.join(baseDir, 'src/index.pug');
@@ -14,7 +15,7 @@ function renderIndexFile(examples) {
     source: `${PATH_PREFIX}/${exmp}`,
   }));
 
-  return pug.renderFile(indexFile, { examples: extendedExamples });
+  return pug.renderFile(indexFile, { examples: extendedExamples, basePath: BASE_PATH });
 }
 
 module.exports = renderIndexFile;
