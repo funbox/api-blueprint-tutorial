@@ -7,7 +7,7 @@
     "lint": "eslint --cache -c .eslintrc --ext .js ./"
   },
   "devDependencies": {
-    "@funboxteam/blueprinter": "5.2.1",
+    "@funboxteam/blueprinter": "5.4.0",
     "@funboxteam/eslint-config": "7.2.0",
     "eslint": "7.32.0",
     "pug": "3.0.2"
