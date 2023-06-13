@@ -1,5 +1,5 @@
+const path = require('node:path');
 const pug = require('pug');
-const path = require('path');
 
 const BASE_PATH = process.env.BASE_PATH || '';
 const PATH_PREFIX = 'https://github.com/funbox/api-blueprint-tutorial/tree/master/examples';

@@ -1,5 +1,5 @@
-const path = require('path');
-const { readdirSync } = require('fs');
+const path = require('node:path');
+const { readdirSync } = require('node:fs');
 
 const exclude = [
   'imports', // imported files
